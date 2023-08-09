@@ -1,0 +1,5 @@
+.image{
+    max-width: 100%; /* 화면의 가로 너비에 맞게 조절됨 */
+    max-height: auto; /* 화면의 세로 높이에 맞게 조절됨 */
+    object-fit: cover; 
+}

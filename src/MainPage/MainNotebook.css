@@ -1,0 +1,28 @@
+.notebook_information{
+    width: 80%;
+    height: 1000px;
+    margin: auto;
+}
+.notebook_information_content_title {
+    display: inline;
+    font-size: 36px;
+    font-weight: bold;
+}
+.notebook_information_content_more{
+    position: relative;
+    left: 10px;
+}
+.notebook_information_content a{
+    text-decoration: none;
+    color: black;
+}
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+}
+
+.video-item {
+    margin-bottom: 30px;
+    text-align: center;
+}
