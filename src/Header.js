@@ -4,8 +4,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faChevronRight, faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import Image from "./Image";
 const Header = () => {
-  
-
   return (
     <div className="main-header">
       <a href="" className="main-header_logo">로고</a>

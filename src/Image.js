@@ -11,7 +11,10 @@ const Image = () =>{
     const nextIndex = (currentImageIndex + 1) % images.length;
     setCurrentImageIndex(nextIndex);
     };
-
+    const handleBeforeImage = () => {
+        const beforeIndex = (currentImageIndex - 1) % images.length;
+        setCurrentImageIndex(beforeIndex);
+        };
     return(
         <div>
             <img className="image" src={images[currentImageIndex]} alt="Main Image" />
@@ -19,7 +22,7 @@ const Image = () =>{
             <FontAwesomeIcon icon={faChevronRight} />
             </button>
 
-            <button className="icon-container-left">
+            <button className="icon-container-left" onClick={handleBeforeImage}>
             <FontAwesomeIcon icon={faChevronLeft} />
             </button>
         </div>
