@@ -1,16 +1,12 @@
 // App.js
 import "./css/App.css"
 import React, { useState } from "react";
-import Header from "./Header";
-import Image from "./Image";
-import MainBody from "./MainPage/MainBody";
-import MainRecommend from "./MainPage/MainRecommend";
-import MainNotebook from "./MainPage/MainNotebook";
-import Footer from "./Footer";
 import Detail from "./Detail"
 import Main from "./Main";
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
 import Result from "./Result";
+import Login from "./LoginPage/Login";
+import Join from "./LoginPage/Join";
 
 function App() {
   // 가짜 상품 데이터 (실제 데이터를 가져와야 함)
@@ -132,6 +128,8 @@ function App() {
         <Route path="/" element={<Main />} />
         <Route path="/product/:productId" element={<Detail fakeRecommendations={fakeRecommendations} />} />
         <Route path="/Result" element={<Result/>}/>
+        <Route path="/Login" element={<Login/>}/>
+        <Route path="/Join" element={<Join/>}/>
       </Routes>
     </Router>
   );
