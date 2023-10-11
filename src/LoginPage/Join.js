@@ -1,36 +1,88 @@
 import { useState } from "react";
 import React from "react";
 
+function Join() {
+  const [user, setUser] = useState({
+    id: "",
+    password: "",
+    name: "",
+    phone: "",
+    registrationDate: "",
+    isAdmin: false,
+  });
 
-function Join(){
-    const [id, setId] =useState("");
-    const [password,setPassword] = useState("");
-    const [name,setName] = useState("");
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setUser({
+      ...user,
+      [name]: value,
+    });
+  };
 
-    const onIdHandler = (event) => {
-        setId(event.currentTarget.value);
-    }
-    const onPasswordHandler = (event) => {
-        setPassword(event.currentTarget.value);
-    }
-    const onNameHandler = (event) => {
-        setName(event.currentTarget.value);
-    }
-    return(
-        <div className = "box1">
-            <div className ="login_h1_box">
-                <h1 className ="login_h1"> 회원가입 <hr/></h1> 
-            </div>
-            <div className ="input_box">
-                <input className="id" type="email" value={id} onChange={onIdHandler} placeholder= "아이디"></input> <br/>
-                <input className = "name" type="name" value={name} onChange={onNameHandler }placeholder= "이름" ></input><br/>   
-                <input className = "password" type="password" value={password} onChange={onPasswordHandler }placeholder= "비밀번호 입력" ></input><br/>
-                <input className = "password" type="password" value={password} onChange={onPasswordHandler }placeholder= "비밀번호 재입력" ></input><br/>
-            </div>
-            <div>
-                <button className="join_btn">가입</button>
-            </div>
+  const handleJoin = () => {
+    
+  };
+
+  return (
+    <div className="box1">
+      <div className="login_h1_box">
+        <h1 className="login_h1">
+          회원가입 <hr />
+        </h1>
+      </div>
+      <div className="input_box">
+        <input
+          className="id"
+          type="email"
+          name="id"
+          value={user.id}
+          onChange={handleChange}
+          placeholder="아이디"
+        />
+        <br />
+        <input
+          className="phone"
+          type="text"
+          name="phone"
+          value={user.phone}
+          onChange={handleChange}
+          placeholder="휴대전화"
+        />
+        <input
+          className="name"
+          type="name"
+          name="name"
+          value={user.name}
+          onChange={handleChange}
+          placeholder="이름"
+        />
+        <br />
+        <input
+          className="password"
+          type="password"
+          name="password"
+          value={user.password}
+          onChange={handleChange}
+          placeholder="비밀번호 입력"
+        />
+        <br />
+        <input
+          className="password"
+          type="password"
+          name="confirmPassword"
+          value={user.confirmPassword}
+          onChange={handleChange}
+          placeholder="비밀번호 재입력"
+        />
+        <br />
+      </div>
+      <div>
+        <button className="join_btn" onClick={handleJoin}>
+          가입
+        </button>
+      </div>
     </div>
-    );
+  );
 }
+
 export default Join;

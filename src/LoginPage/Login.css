@@ -65,6 +65,14 @@ input::placeholder{
     border-color:aliceblue;
     border-width: 1px;
 }
+.phone{
+    background: transparent;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-color:aliceblue;
+    border-width: 1px;
+}
 .login_btn{
     width:160px;
     height:40px;

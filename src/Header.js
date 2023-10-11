@@ -21,8 +21,9 @@ const Header = () => {
       <div className="main-header_user">
         <div className="user">
           <Link to = "/Login"><button span className="user1">로그인</button></Link>
-          <button span className="user2">회원가입</button>
+          <Link to = "/Join"><button span className="user2">회원가입</button></Link>
           <button span className="user3">관심상품</button>
+          <Link to = "/MyPage"><button span className="user4">마이페이지</button></Link>
         </div>
       </div>
 

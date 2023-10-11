@@ -1,0 +1,45 @@
+.my-page-container{
+    width: 700px;
+    height: 600px;
+    background-color: rgba(0, 0, 250, 0.4);
+    text-align: center;
+    position: relative;
+    margin:auto;
+    margin-top:150px;
+    border-radius: 20px;
+ }
+ 
+ .my-page-title{
+      font-size :50px ;
+      position:relative ;
+      top :30px ;   
+ }
+ 
+ .input-box{
+      display:flex ;
+      flex-direction :column ;   
+      justify-content:center ;   
+      align-items:center ;   
+      padding-top :40px ;
+ }
+ 
+ .input-box input{
+       width :200px ;
+       height :30px ;
+       margin-bottom :20px ;
+       background-color :transparent ;  
+       border:none ;  
+       border-bottom :2px solid white ;  
+       color:white ;     
+       outline:none ;
+ }
+ 
+ .update-button{
+        width :200px ;
+        height :40px ;
+        border:none ;
+        border-radius :10% ;     
+        color:white ;     
+        background-color:#2222;    
+ }
+ 

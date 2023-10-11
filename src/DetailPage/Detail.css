@@ -1,0 +1,22 @@
+.bigbox {
+    width: 80%;
+    margin: auto;
+
+}
+.product-detail-border{
+    margin: auto;
+    margin-top: 80px;
+    margin-bottom: 20px;
+    background-color: #D9D9D9;
+    color: #D9D9D9;
+    border-style: solid;
+    height: 20px;
+}
+.action-buttons {
+    display: block;
+    float: right;
+    margin: auto;
+}
+.action-buttons img{
+    width: 10%;
+}

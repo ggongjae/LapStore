@@ -1,12 +1,13 @@
 // App.js
 import "./css/App.css"
 import React, { useState } from "react";
-import Detail from "./Detail"
+import Detail from "./DetailPage/Detail"
 import Main from "./Main";
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
 import Result from "./Result";
 import Login from "./LoginPage/Login";
 import Join from "./LoginPage/Join";
+import MyPage from "./Mypage/Mypage";
 
 function App() {
   // 가짜 상품 데이터 (실제 데이터를 가져와야 함)
@@ -130,6 +131,7 @@ function App() {
         <Route path="/Result" element={<Result/>}/>
         <Route path="/Login" element={<Login/>}/>
         <Route path="/Join" element={<Join/>}/>
+        <Route path="/Mypage" element = {<MyPage/>}/>
       </Routes>
     </Router>
   );
