@@ -154,7 +154,7 @@ const MainRecommend = () => {
               <p>RAM {product.RAM}</p>
               <p>{product.해쉬태크}</p>
               <p>{product.최저가}</p>
-              <p>{product.가격}</p>
+              <p className="price">{product.가격}</p>
             </div>
             <div className="product-action">
             

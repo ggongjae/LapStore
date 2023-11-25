@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faChevronRight, faChevronLeft } from "@fortawesome/free-solid-svg-icons";
-
+import banner1 from "./사진/배너1.png"
 
 const Image = () =>{
-    const images = ["./Rectangle 5.png", "./Lg.png"];
+    const images = ["./Rectangle 5.png", "./배너1.png"];
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
     const handleNextImage = () => {

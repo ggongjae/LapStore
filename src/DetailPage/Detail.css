@@ -13,10 +13,67 @@
     height: 20px;
 }
 .action-buttons {
-    display: block;
     float: right;
     margin: auto;
 }
+
 .action-buttons img{
-    width: 10%;
+    width: 6%;
+}
+.action-buttons button{
+    border: none;
+    background-color: transparent;
+    color: black; 
+}
+.product-detail-image::before {
+    content: ""; 
+    display: block; 
+    width: 300px; 
+    height: 300px; 
+    background: #ddd; 
+}
+
+.product-detail-top {
+    display: flex;
+    width: 100%;
+}
+
+.produc-detail-1{
+    display: flex;
+    flex-direction: row;
+    color: #D9D9D9;
+}
+.produc-detail-1 p{
+    margin-right: 20px
+}
+.product-detail-price{
+    display: flex;
+    flex-direction: column;
+    font-size: 30px; 
+}
+.product-detail-lowest {
+    color: #424242;
+    margin-bottom: 0px; /* 필요한 간격에 따라 조절 */
+}
+
+.product-detail-price-action {
+    display: flex;
+    align-items: stretch;  /* 자식 요소들이 부모 요소와 같은 높이를 가지도록 설정 */
+    justify-content: space-between;
+}
+
+.product-detail-price-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.product-detail-buy {
+    position: relative;
+    bottom: 30px;
+    width: 250px;
+    background-color: #D9D9D9; /* 버튼 배경색 */
+    color: black; /* 버튼 글씨색 */
+    border: none; /* 버튼 테두리 제거 */
+    cursor: pointer; /* 마우스 커서를 손가락 모양으로 변경 */
+    margin-left: 120px;
 }
