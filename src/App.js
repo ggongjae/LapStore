@@ -3,7 +3,7 @@ import "./css/App.css"
 import React, { useState } from "react";
 import Detail from "./DetailPage/Detail"
 import Main from "./Main";
-import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link, Routes, Switch } from 'react-router-dom';
 import Result from "./Result";
 import Login from "./LoginPage/Login";
 import Join from "./LoginPage/Join";
@@ -86,7 +86,13 @@ function App() {
         <Route path="/Login" element={<Login/>}/>
         <Route path="/Join" element={<Join/>}/>
         <Route path="/Mypage" element = {<MyPage/>}/>
+  
+          <Route path="/detail"></Route>
+          <Route path="/price-comparison"> </Route>
+          <Route path="/product-comparison"></Route>
+          <Route path="/product-review"></Route>
       </Routes>
+      
     </Router>
   );
 }

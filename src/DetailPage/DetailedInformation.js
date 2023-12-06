@@ -1,21 +1,25 @@
 import React from 'react';
 import './DetailedInformation.css';
+
 const DetailedInformation = ({ product }) => {
     return (
         <table className="product-detailed-info">
-             <thead>
+            {/* 기본 사항 */}
+            <thead>
                 <tr>
                     <th colSpan="4">기본 사항</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>운영체제</td>
-                    <td>{product.Os}</td>
-                    <td>추천 영역</td>
-                    <td>{product.recommendedArea}</td>
+                    <td className="label">운영체제</td>
+                    <td className="data">{product.Os}</td>
+                    <td className="label">추천 영역</td>
+                    <td className="data">{product.recommendedArea}</td>
                 </tr>
             </tbody>
+
+            {/* 기본 사양 */}
             <thead>
                 <tr>
                     <th colSpan="4">기본 사양</th>
@@ -23,28 +27,30 @@ const DetailedInformation = ({ product }) => {
             </thead>
             <tbody>
                 <tr>
-                    <td>화면 크기</td>
-                    <td>{product.screenSize}</td>
-                    <td>해상도</td>
-                    <td>{product.resolution}</td>
+                    <td className="label">화면 크기</td>
+                    <td className="data">{product.screenSize}</td>
+                    <td className="label">해상도</td>
+                    <td className="data">{product.resolution}</td>
                 </tr>
                 <tr>
-                    <td>화면 비율</td>
-                    <td>{product.aspectRatio}</td>
-                    <td>밝기</td>
-                    <td>{product.brightness}</td>
+                    <td className="label">화면 비율</td>
+                    <td className="data">{product.aspectRatio}</td>
+                    <td className="label">밝기</td>
+                    <td className="data">{product.brightness}</td>
                 </tr>
                 <tr>
-                    <td>특징</td>
-                    <td>{product.feature}</td>
-                    <td>패널 코팅</td>
-                    <td>{product.panelCoating}</td>
+                    <td className="label">특징</td>
+                    <td className="data">{product.feature}</td>
+                    <td className="label">패널 코팅</td>
+                    <td className="data">{product.panelCoating}</td>
                 </tr>
                 <tr>
-                    <td>주사율</td>
-                    <td>{product.refreshRate}</td>
+                    <td className="label">주사율</td>
+                    <td className="data">{product.refreshRate}</td>
                 </tr>
             </tbody>
+
+            {/* CPU */}
             <thead>
                 <tr>
                     <th colSpan="4">CPU</th>
@@ -52,28 +58,30 @@ const DetailedInformation = ({ product }) => {
             </thead>
             <tbody>
                 <tr>
-                    <td>제조사</td>
-                    <td>{product.cpuManufacturer}</td>
-                    <td>종류</td>
-                    <td>{product.cpuType}</td>
+                    <td className="label">제조사</td>
+                    <td className="data">{product.cpuManufacturer}</td>
+                    <td className="label">종류</td>
+                    <td className="data">{product.cpuType}</td>
                 </tr>
                 <tr>
-                    <td>코드명</td>
-                    <td>{product.cpuCodeName}</td>
-                    <td>모델명</td>
-                    <td>{product.cpuModelName}</td>
+                    <td className="label">코드명</td>
+                    <td className="data">{product.cpuCodeName}</td>
+                    <td className="label">모델명</td>
+                    <td className="data">{product.cpuModelName}</td>
                 </tr>
                 <tr>
-                    <td>코어 종류</td>
-                    <td>{product.coreType}</td>
-                    <td>속도</td>
-                    <td>{product.speed}</td>
+                    <td className="label">코어 종류</td>
+                    <td className="data">{product.coreType}</td>
+                    <td className="label">속도</td>
+                    <td className="data">{product.speed}</td>
                 </tr>
                 <tr>
-                    <td>터보 부스트</td>
-                    <td>{product.turboBoost}</td>
+                    <td className="label">터보 부스트</td>
+                    <td className="data">{product.turboBoost}</td>
                 </tr>
             </tbody>
+
+            {/* 메모리 */}
             <thead>
                 <tr>
                     <th colSpan="2">메모리</th>
@@ -81,19 +89,16 @@ const DetailedInformation = ({ product }) => {
             </thead>
             <tbody>
                 <tr>
-                    <td>램</td>
-                    <td>{product.ram}</td>
+                    <td className="label">램</td>
+                    <td className="data">{product.ram}</td>
                 </tr>
-            <thead>
                 <tr>
-                    <th colSpan="2">메모리</th>
-                </tr>
-            </thead>
-                <tr>
-                    <td>저장장치</td>
-                    <td>{product.storage}</td>
+                    <td className="label">저장장치</td>
+                    <td className="data">{product.storage}</td>
                 </tr>
             </tbody>
+
+            {/* 그래픽 */}
             <thead>
                 <tr>
                     <th colSpan="4">그래픽</th>
@@ -101,16 +106,18 @@ const DetailedInformation = ({ product }) => {
             </thead>
             <tbody>
                 <tr>
-                    <td>내장그래픽</td>
-                    <td>{product.builtInGraphics}</td>
-                    <td>TGP</td>
-                    <td>{product.tgp}</td>
+                    <td className="label">내장그래픽</td>
+                    <td className="data">{product.builtInGraphics}</td>
+                    <td className="label">TGP</td>
+                    <td className="data">{product.tgp}</td>
                 </tr>
                 <tr>
-                    <td>그래픽 메모리</td>
-                    <td>{product.graphicsMemory}</td>
+                    <td className="label">그래픽 메모리</td>
+                    <td className="data">{product.graphicsMemory}</td>
                 </tr>
             </tbody>
+
+            {/* 네트워크 */}
             <thead>
                 <tr>
                     <th colSpan="4">네트워크</th>
@@ -118,16 +125,18 @@ const DetailedInformation = ({ product }) => {
             </thead>
             <tbody>
                 <tr>
-                    <td>무선랜</td>
-                    <td>{product.wirelessLan}</td>
-                    <td>유선랜</td>
-                    <td>{product.wiredLan}</td>
+                    <td className="label">무선랜</td>
+                    <td className="data">{product.wirelessLan}</td>
+                    <td className="label">유선랜</td>
+                    <td className="data">{product.wiredLan}</td>
                 </tr>
                 <tr>
-                    <td>블루투스</td>
-                    <td>{product.bluetooth}</td>
+                    <td className="label">블루투스</td>
+                    <td className="data">{product.bluetooth}</td>
                 </tr>
             </tbody>
+
+            {/* 영상입출력 */}
             <thead>
                 <tr>
                     <th colSpan="4">영상입출력</th>
@@ -135,12 +144,14 @@ const DetailedInformation = ({ product }) => {
             </thead>
             <tbody>
                 <tr>
-                    <td>영상출력</td>
-                    <td>{product.videoOutput}</td>
-                    <td>웹캠</td>
-                    <td>{product.webcam}</td>
+                    <td className="label">영상출력</td>
+                    <td className="data">{product.videoOutput}</td>
+                    <td className="label">웹캠</td>
+                    <td className="data">{product.webcam}</td>
                 </tr>
             </tbody>
+
+            {/* 단자 */}
             <thead>
                 <tr>
                     <th colSpan="4">단자</th>
@@ -148,10 +159,12 @@ const DetailedInformation = ({ product }) => {
             </thead>
             <tbody>
                 <tr>
-                    <td>단자</td>
-                    <td>{product.ports}</td>
+                    <td className="label">단자</td>
+                    <td className="data">{product.ports}</td>
                 </tr>
             </tbody>
+
+            {/* 부가기능 */}
             <thead>
                 <tr>
                     <th colSpan="4">부가기능</th>
@@ -159,12 +172,14 @@ const DetailedInformation = ({ product }) => {
             </thead>
             <tbody>
                 <tr>
-                    <td>보안기능</td>
-                    <td>{product.securityFeatures}</td>
-                    <td>부가기능</td>
-                    <td>{product.additionalFeatures}</td>
+                    <td className="label">보안기능</td>
+                    <td className="data">{product.securityFeatures}</td>
+                    <td className="label">부가기능</td>
+                    <td className="data">{product.additionalFeatures}</td>
                 </tr>
             </tbody>
+
+            {/* 입력장치 */}
             <thead>
                 <tr>
                     <th colSpan="4">입력장치</th>
@@ -172,16 +187,18 @@ const DetailedInformation = ({ product }) => {
             </thead>
             <tbody>
                 <tr>
-                    <td>입력장치</td>
-                    <td>{product.inputDevice}</td>
-                    <td>방향키</td>
-                    <td>{product.directionKeys}</td>
+                    <td className="label">입력장치</td>
+                    <td className="data">{product.inputDevice}</td>
+                    <td className="label">방향키</td>
+                    <td className="data">{product.directionKeys}</td>
                 </tr>
                 <tr>
-                    <td>부가기능</td>
-                    <td>{product.inputAdditionalFeatures}</td>
+                    <td className="label">부가기능</td>
+                    <td className="data">{product.inputAdditionalFeatures}</td>
                 </tr>
             </tbody>
+
+            {/* 전원 */}
             <thead>
                 <tr>
                     <th colSpan="4">전원</th>
@@ -189,12 +206,14 @@ const DetailedInformation = ({ product }) => {
             </thead>
             <tbody>
                 <tr>
-                    <td>배터리</td>
-                    <td>{product.battery}</td>
-                    <td>충전단자</td>
-                    <td>{product.chargingPort}</td>
+                    <td className="label">배터리</td>
+                    <td className="data">{product.battery}</td>
+                    <td className="label">충전단자</td>
+                    <td className="data">{product.chargingPort}</td>
                 </tr>
             </tbody>
+
+            {/* 규격 */}
             <thead>
                 <tr>
                     <th colSpan="3">규격</th>
@@ -202,16 +221,18 @@ const DetailedInformation = ({ product }) => {
             </thead>
             <tbody>
                 <tr>
-                    <td>색상</td>
-                    <td>{product.color}</td>
-                    <td>두께</td>
-                    <td>{product.thickness}</td>
+                    <td className="label">색상</td>
+                    <td className="data">{product.color}</td>
+                    <td className="label">두께</td>
+                    <td className="data">{product.thickness}</td>
                 </tr>
                 <tr>
-                    <td>무게</td>
-                    <td>{product.weight}</td>
+                    <td className="label">무게</td>
+                    <td className="data">{product.weight}</td>
                 </tr>
             </tbody>
+
+            {/* 인증정보 */}
             <thead>
                 <tr>
                     <th colSpan="2">인증정보</th>
@@ -219,10 +240,10 @@ const DetailedInformation = ({ product }) => {
             </thead>
             <tbody>
                 <tr>
-                    <td>안전인증</td>
-                    <td>{product.safetyCertification}</td>
-                    <td>적합성평가인증</td>
-                    <td>{product.complianceCertification}</td>
+                    <td className="label">안전인증</td>
+                    <td className="data">{product.safetyCertification}</td>
+                    <td className="label">적합성평가인증</td>
+                    <td className="data">{product.complianceCertification}</td>
                 </tr>
             </tbody>
         </table>

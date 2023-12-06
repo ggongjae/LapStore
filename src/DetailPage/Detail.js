@@ -1,4 +1,3 @@
-import React from "react";
 import './Detail.css';
 import Header from "../Header";
 import Footer from "../Footer";
@@ -6,13 +5,28 @@ import PrintImage from "../사진/프린트.png"
 import SaveImage from "../사진/Save.png"
 import DownloadImage from "../사진/Group 140.png"
 import DecalarationImage from "../사진/Group 139.png"
-import { useParams } from "react-router-dom";
+import React, { useState , useEffect } from "react";
+import { useParams} from "react-router-dom";
 import DetailedInformation from "./DetailedInformation";
+import DetailPriceComparision from "./DetailPriceComparision";
+import DetailedProductComparision from "./DetailProductComparision";
+import { Link, Element } from "react-scroll";
 
 const Detail = ({ fakeRecommendations }) => {
     const { productId } = useParams();
     const product = fakeRecommendations.find(product => product.id === parseInt(productId));
 
+    const [isSticky, setSticky] = useState(false);
+
+    const checkScrollTop = () => {
+        // 스크롤 위치가 600 이상이면 고정
+        setSticky(window.pageYOffset > 600);
+    };
+
+    useEffect(() => {
+        window.addEventListener('scroll', checkScrollTop);
+        return () => window.removeEventListener('scroll', checkScrollTop);
+    }, []);
     return (
         <div>
             <Header />
@@ -54,8 +68,25 @@ const Detail = ({ fakeRecommendations }) => {
                         </div>
                     </div>
                 </div>
-                
-                <DetailedInformation product={product}/>
+                <div className={`nav ${isSticky ? 'fixed-nav' : ''}`}>
+                    <nav>
+                        <ul>
+                            <li> <Link to="detail" smooth={true} duration={500}>상세 정보</Link> </li>
+                            <li> <Link to="price-comparison" smooth={true} duration={500}>가격 비교</Link></li>
+                            <li> <Link to="product-comparison" smooth={true} duration={500}>상품 비교</Link> </li>
+                            <li> <Link to="product-review" smooth={true} duration={500}>상품 리뷰</Link> </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div>
+                    <Element name = "price-comparison"><DetailPriceComparision product={product}/></Element>
+                    <Element name= "detail"><DetailedInformation product={product}/></Element>
+                    <Element name= "product-comparison"><DetailedProductComparision product={product}/></Element>
+            
+                </div>
+                <div>
+            
+                </div>
             </div>
             <Footer />
         </div>

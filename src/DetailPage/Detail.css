@@ -77,3 +77,28 @@
     cursor: pointer; /* 마우스 커서를 손가락 모양으로 변경 */
     margin-left: 120px;
 }
+
+.nav {
+    background-color: #f5f5f5; /* 기본 배경색 */
+    color: black; /* 기본 글자 색 */
+}
+
+.fixed-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    border-bottom: 1px solid black; /* 하단 검은색 border */
+}
+
+.nav ul {
+    display: flex;
+    justify-content: space-around; /* 항목들을 가운데 정렬 */
+    list-style: none; /* 리스트 스타일 제거 */
+    padding: 10px 0; /* 상하 패딩 적용 */
+
+}
+
+.nav ul li {
+    flex-grow: 1;
+    text-align: center; /* 텍스트 가운데 정렬 */
+}
