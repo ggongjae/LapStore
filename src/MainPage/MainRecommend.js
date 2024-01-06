@@ -131,39 +131,46 @@ const MainRecommend = () => {
 
   return (
     <div className="main-recommend">
-      <h3 className="main-recommend-title">추천상품보기</h3>
-      <div className="recommendation-list">
-        {fakeRecommendations.map((product) => (
-          <div key={product.id} className="recommendation-item">
-            <Link to={`/product/${product.id}`} className="product-link"></Link>
-            <div className="product-image" >
-              <button className="heart-button" onClick={() => handleHeartClick(product.id)}>
-              <FontAwesomeIcon
-                icon={faHeart}
-                color={product.heartClicked ? "red" : "gray"}
-              />
-              </button>
-            </div>
-            <div className="product-details"> 
-              <Link to={`/product/${product.id}`} className="product-link">
-              <p className="product-name">{product.name}</p></Link> 
-              <p>Os {product.Os}</p> 
-              <p>저장장치 {product.저장장치}</p>
-              <p>CPU {product.CPU}</p>
-              <p>VGA {product.VGA}</p>
-              <p>RAM {product.RAM}</p>
-              <p>{product.해쉬태크}</p>
-              <p>{product.최저가}</p>
-              <p className="price">{product.가격}</p>
-            </div>
-            <div className="product-action">
-            
-            </div>     
-          </div>
-        ))}
-      </div>
+        <h3 className="main-recommend-title">추천상품보기</h3>
+        <div className="recommendation-list">
+            {fakeRecommendations.map((product) => (
+                <div key={product.id} className="recommendation-item">
+                    <Link to={`/product/${product.id}`} className="product-link"></Link>
+                    <div className="product-image" >
+                        <button className="heart-button" onClick={() => handleHeartClick(product.id)}>
+                            <FontAwesomeIcon
+                                icon={faHeart}
+                                color={product.heartClicked ? "red" : "gray"}
+                            />
+                        </button>
+                    </div>
+                    <div className="product-details"> 
+                        <Link to={`/product/${product.id}`} className="product-link">
+                            <p className="product-name">{product.name}</p></Link> 
+
+                        <div className="product-specs">
+                            <div className="spec-group1">
+                                <p>Os: {product.Os}</p> 
+                                <p>저장장치: {product.저장장치}</p>
+                                <p>CPU: {product.CPU}</p>
+                                <p>VGA: {product.VGA}</p>
+                                <p>RAM: {product.RAM}</p>
+                            </div>
+                            <div className="spec-group2">
+                                <p>{product.해쉬태크}</p>
+                                <p>최저가 {product.최저가}</p>
+                            </div>
+                        </div>
+
+                        <p className="price">{product.가격}</p>
+                    </div>
+                    <div className="product-action"></div>     
+                </div>
+            ))}
+        </div>
     </div>
-  );
+);
+
 };
 
 export default MainRecommend;

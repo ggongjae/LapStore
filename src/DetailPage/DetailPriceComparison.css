@@ -1,0 +1,12 @@
+.product-comparison {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.product-item {
+    width: 48%;  /* 상품 너비 설정 (간격을 고려하여 50%보다 약간 작게 설정) */
+    box-sizing: border-box;  /* padding과 border를 너비에 포함 */
+    padding: 10px;  /* 상품 내부 간격 설정 */
+    margin-bottom: 20px;  /* 상품 하단 간격 설정 */
+}

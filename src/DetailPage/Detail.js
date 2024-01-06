@@ -10,6 +10,7 @@ import { useParams} from "react-router-dom";
 import DetailedInformation from "./DetailedInformation";
 import DetailPriceComparision from "./DetailPriceComparision";
 import DetailedProductComparision from "./DetailProductComparision";
+import DetailedProductReview from './DetailedProductReview';
 import { Link, Element } from "react-scroll";
 
 const Detail = ({ fakeRecommendations }) => {
@@ -71,18 +72,18 @@ const Detail = ({ fakeRecommendations }) => {
                 <div className={`nav ${isSticky ? 'fixed-nav' : ''}`}>
                     <nav>
                         <ul>
-                            <li> <Link to="detail" smooth={true} duration={500}>상세 정보</Link> </li>
                             <li> <Link to="price-comparison" smooth={true} duration={500}>가격 비교</Link></li>
+                            <li> <Link to="detail" smooth={true} duration={500}>상세 정보</Link> </li>
                             <li> <Link to="product-comparison" smooth={true} duration={500}>상품 비교</Link> </li>
                             <li> <Link to="product-review" smooth={true} duration={500}>상품 리뷰</Link> </li>
                         </ul>
                     </nav>
                 </div>
-                <div>
+                <div className='element'>
                     <Element name = "price-comparison"><DetailPriceComparision product={product}/></Element>
                     <Element name= "detail"><DetailedInformation product={product}/></Element>
                     <Element name= "product-comparison"><DetailedProductComparision product={product}/></Element>
-            
+                    <Element name= "product-review"><DetailedProductReview product={product}/></Element>
                 </div>
                 <div>
             

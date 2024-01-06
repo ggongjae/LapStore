@@ -102,3 +102,8 @@
     flex-grow: 1;
     text-align: center; /* 텍스트 가운데 정렬 */
 }
+
+.element{
+    width: 80%;
+    margin: auto;
+}

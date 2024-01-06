@@ -3,6 +3,9 @@ import './DetailedInformation.css';
 
 const DetailedInformation = ({ product }) => {
     return (
+        <div>
+        <h2>상세정보</h2>
+    
         <table className="product-detailed-info">
             {/* 기본 사항 */}
             <thead>
@@ -247,6 +250,7 @@ const DetailedInformation = ({ product }) => {
                 </tr>
             </tbody>
         </table>
+        </div>
     );
 };
 

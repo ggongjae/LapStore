@@ -4,7 +4,7 @@ import { faChevronRight, faChevronLeft } from "@fortawesome/free-solid-svg-icons
 
 
 const Image = () =>{
-    const images = ["./Rectangle 5.png" ];
+    const images = ["./배너1.png","./배너2.png","./배너3.png","./배너4.png" ];
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
     const handleNextImage = () => {

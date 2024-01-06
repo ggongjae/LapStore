@@ -68,3 +68,46 @@
 }
   
 
+.product-details {
+  color: gray;
+}
+
+.spec-group1 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  font-size: 14px;
+}
+
+.spec-group1 p {
+  width: 40%;
+  margin-bottom: 0;
+}
+
+.spec-group1 p:last-child {
+  width: 100%;
+}
+.spec-group2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  font-size: 16px;
+  margin-left: 20%;
+  
+  width: fit-content;
+}
+
+.spec-group2 p {
+  margin-bottom: 10px;
+}
+
+.price {
+  text-align: right;
+  color: #2426DB;
+  font-size: 36px;
+  font-weight: bold;
+  width: 80%;
+  margin-top: -1px; 
+}

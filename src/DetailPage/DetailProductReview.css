@@ -1,0 +1,45 @@
+/* App.css 또는 별도의 CSS 파일에 추가 */
+.rating-bar-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    
+}
+
+.rating-label {
+    width: 50px;
+    text-align: right;
+}
+
+.rating-bar-background {
+    width: 200px;
+    height: 20px;
+    background-color: #ddd;
+    margin: 0 10px;
+}
+
+.rating-bar {
+    height: 100%;
+    background-color: #000;
+}
+
+.reviews-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: -15px;
+}
+
+.review-item {
+    flex-basis: calc(33.3333% - 30px);
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    margin: 15px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.review-item img {
+    width: 100%;
+    height: auto;
+}

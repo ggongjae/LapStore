@@ -8,7 +8,8 @@ import Result from "./Result";
 import Login from "./LoginPage/Login";
 import Join from "./LoginPage/Join";
 import MyPage from "./Mypage/Mypage";
-
+import ProductComparison from "./DetailPage/DetailProductComparision";
+import PriceComparison from "./DetailPage/DetailPriceComparision";
 function App() {
   // 가짜 상품 데이터 (실제 데이터를 가져와야 함)
   const [fakeRecommendations, setFakeRecommendations] = useState([
@@ -82,15 +83,13 @@ function App() {
           path="/product/:productId" 
           element={<Detail fakeRecommendations={fakeRecommendations} />} 
         />
+        <Route path="/price-comparison" element={<PriceComparison products={fakeRecommendations} />} />
         <Route path="/Result" element={<Result/>}/>
         <Route path="/Login" element={<Login/>}/>
         <Route path="/Join" element={<Join/>}/>
         <Route path="/Mypage" element = {<MyPage/>}/>
   
-          <Route path="/detail"></Route>
-          <Route path="/price-comparison"> </Route>
-          <Route path="/product-comparison"></Route>
-          <Route path="/product-review"></Route>
+    
       </Routes>
       
     </Router>
