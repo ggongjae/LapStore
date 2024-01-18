@@ -1,14 +1,13 @@
 .bigbox {
     width: 80%;
     margin: auto;
-
 }
-.product-detail-border{
+.product-detail-border {
     margin: auto;
     margin-top: 80px;
     margin-bottom: 20px;
-    background-color: #D9D9D9;
-    color: #D9D9D9;
+    background-color: #d9d9d9;
+    color: #d9d9d9;
     border-style: solid;
     height: 20px;
 }
@@ -17,20 +16,20 @@
     margin: auto;
 }
 
-.action-buttons img{
+.action-buttons img {
     width: 6%;
 }
-.action-buttons button{
+.action-buttons button {
     border: none;
     background-color: transparent;
-    color: black; 
+    color: black;
 }
 .product-detail-image::before {
-    content: ""; 
-    display: block; 
-    width: 300px; 
-    height: 300px; 
-    background: #ddd; 
+    content: '';
+    display: block;
+    width: 300px;
+    height: 300px;
+    background: #ddd;
 }
 
 .product-detail-top {
@@ -38,18 +37,18 @@
     width: 100%;
 }
 
-.produc-detail-1{
+.produc-detail-1 {
     display: flex;
     flex-direction: row;
-    color: #D9D9D9;
+    color: #d9d9d9;
 }
-.produc-detail-1 p{
-    margin-right: 20px
+.produc-detail-1 p {
+    margin-right: 20px;
 }
-.product-detail-price{
+.product-detail-price {
     display: flex;
     flex-direction: column;
-    font-size: 30px; 
+    font-size: 30px;
 }
 .product-detail-lowest {
     color: #424242;
@@ -58,7 +57,6 @@
 
 .product-detail-price-action {
     display: flex;
-    align-items: stretch;  /* 자식 요소들이 부모 요소와 같은 높이를 가지도록 설정 */
     justify-content: space-between;
 }
 
@@ -71,7 +69,7 @@
     position: relative;
     bottom: 30px;
     width: 250px;
-    background-color: #D9D9D9; /* 버튼 배경색 */
+    background-color: #d9d9d9; /* 버튼 배경색 */
     color: black; /* 버튼 글씨색 */
     border: none; /* 버튼 테두리 제거 */
     cursor: pointer; /* 마우스 커서를 손가락 모양으로 변경 */
@@ -79,14 +77,23 @@
 }
 
 .nav {
-    background-color: #f5f5f5; /* 기본 배경색 */
+    background-color: #d9d9d9; /* 기본 배경색 */
     color: black; /* 기본 글자 색 */
+    width: 80%;
+    height: 40px;
+    margin: 0 auto;
+    align-items: center; /* 세로축에서 중앙 정렬 */
+    border: 1px solid #b3b3b3;
+    border-bottom: 2px solid #424242;
 }
 
 .fixed-nav {
+    height: 40px;
     position: fixed;
-    top: 0;
-    width: 100%;
+    top: 21px;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%, -50%);
     border-bottom: 1px solid black; /* 하단 검은색 border */
 }
 
@@ -94,16 +101,13 @@
     display: flex;
     justify-content: space-around; /* 항목들을 가운데 정렬 */
     list-style: none; /* 리스트 스타일 제거 */
-    padding: 10px 0; /* 상하 패딩 적용 */
-
 }
 
 .nav ul li {
-    flex-grow: 1;
     text-align: center; /* 텍스트 가운데 정렬 */
 }
 
-.element{
+.element {
     width: 80%;
     margin: auto;
 }

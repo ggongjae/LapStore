@@ -1,5 +1,16 @@
-.image{
+.image {
     max-width: 100%; /* 화면의 가로 너비에 맞게 조절됨 */
     max-height: auto; /* 화면의 세로 높이에 맞게 조절됨 */
-    object-fit: cover; 
+    object-fit: cover;
+}
+.image-index {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 5px 10px;
+    border-radius: 15px;
+    color: #333;
+    font-size: 14px;
 }

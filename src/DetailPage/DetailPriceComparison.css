@@ -1,12 +1,11 @@
-.product-comparison {
+.price-input-container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    align-items: center;
 }
 
-.product-item {
-    width: 48%;  /* 상품 너비 설정 (간격을 고려하여 50%보다 약간 작게 설정) */
-    box-sizing: border-box;  /* padding과 border를 너비에 포함 */
-    padding: 10px;  /* 상품 내부 간격 설정 */
-    margin-bottom: 20px;  /* 상품 하단 간격 설정 */
+.price-input-container input {
+    padding: 5px;
+    width: 100px; /* 입력창의 고정 너비 설정 */
+    border: 1px solid #ccc; /* 입력창에 테두리 추가 */
+    border-radius: 5px; /* 입력창의 모서리를 둥글게 처리 */
 }

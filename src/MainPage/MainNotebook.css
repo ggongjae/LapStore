@@ -1,4 +1,4 @@
-.notebook_information{
+.notebook_information {
     width: 80%;
     height: 1000px;
     margin: auto;
@@ -8,11 +8,11 @@
     font-size: 36px;
     font-weight: bold;
 }
-.notebook_information_content_more{
+.notebook_information_content_more {
     position: relative;
     left: 10px;
 }
-.notebook_information_content a{
+.notebook_information_content a {
     text-decoration: none;
     color: black;
 }

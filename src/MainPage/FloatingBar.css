@@ -1,0 +1,28 @@
+/* FloatingBar.css */
+.floating-bar {
+    position: fixed; /* 화면에 고정 */
+    top: 50%; /* 화면의 중앙에 위치 */
+    right: 8px; /* 오른쪽 가장자리에서 10px 떨어진 곳에 위치 */
+    transform: translateY(-50%); /* Y축 기준 중앙 정렬 */
+    width: 100px; /* 너비 */
+    height: 500px;
+    background-color: rgb(255, 255, 255); /* 배경색 */
+    border: 1px solid rgb(179, 179, 179); /* 테두리 */
+    border-radius: 20px 0px 0px 20px; /* 테두리 둥글게 */
+    z-index: 1000; /* 다른 요소들 위에 보이도록 z-index 설정 */
+    text-align: center;
+}
+
+.floating-item img {
+    width: 50px; /* 이미지의 크기를 조정합니다 */
+    height: 90px;
+    padding: 10px; /* 이미지의 패딩을 추가합니다 */
+    border-bottom: 1px solid #eaeaea; /* 구분선을 추가합니다 */
+    cursor: pointer;
+}
+.floating-ite img {
+    width: 64px; /* 이미지의 크기를 조정합니다 */
+    height: 102px;
+    padding: 10px; /* 이미지의 패딩을 추가합니다 */
+    cursor: pointer;
+}

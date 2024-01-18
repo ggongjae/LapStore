@@ -1,105 +1,63 @@
-.box1{
-    width: 700px;
-    height: 500px;
-    background-color: rgba( 0, 0, 250, 0.4 );
+.box {
+    width: 100vw; /* 뷰포트의 전체 너비 */
+    height: 100vh; /* 뷰포트의 전체 높이 */
+    display: flex; /* Flexbox 레이아웃 사용 */
+    justify-content: center; /* 가로축 중앙 정렬 */
+    align-items: center; /* 세로축 중앙 정렬 */
+    background-color: #e5e5e5; /* 배경 색상 */
+}
+
+/* 실제 로그인 폼을 담는 내부 박스 */
+.box1 {
+    padding: 40px;
+    border-radius: 10px;
     text-align: center;
-    position: relative;
-    margin:auto;
-    margin-top:150px;
-    border-radius: 20px;
 }
 
-.login_h1{
-    font-size: 50px;
-    position:relative;
-    top:30px;
-}
-hr{
-    width:50%; 
+.login_h1_box {
+    margin-bottom: 30px; /* 로고 아래 간격 추가 */
 }
 
-.input_box{
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding:40px
+.input_box input {
+    width: 480px;
+    height: 40px; /* 입력란 높이 설정 */
+    margin-bottom: 20px; /* 입력란 간 간격 설정 */
+    border: 1px solid #ccc; /* 테두리 색상 설정 */
+    border-radius: 5px; /* 입력란 모서리 둥글게 처리 */
+    padding: 0 10px; /* 입력란 내부 패딩 설정 */
+    box-shadow: 1px 1px 1px 1px #ccc;
 }
-.input_box input{
-    width: 200px;
-    height: 30px;
-    outline:none;
-}
-input::placeholder{
-    color:aliceblue;
-    width:100px;
-    height:100px;
-    font-size:15px;
-}
-.id {
-    background: transparent;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-color:aliceblue;
-    border-width: 1px;
-    color:red;
-    
-}
-.id{
-    color:aliceblue;
-}
-.password{
-    background: transparent;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-color:aliceblue;
-    border-width: 1px;
-}
-.name{
-    background: transparent;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-color:aliceblue;
-    border-width: 1px;
-}
-.phone{
-    background: transparent;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-color:aliceblue;
-    border-width: 1px;
-}
-.login_btn{
-    width:160px;
-    height:40px;
-    border:none;
-    border-radius: 10px;
-    background-color: #2222;
-    color:aliceblue;
-    font-size: 18px;
-    margin-bottom: 40px;
-}
-.join_btn{
-    width:160px;
-    height:40px;
-    border:none;
-    border-radius: 10px;
-    background-color: #2222;
-    color:aliceblue;
-    font-size: 18px;
 
+.login_btn {
+    width: 500px;
+    height: 60px; /* 버튼 높이 설정 */
+    margin-bottom: 20px; /* 버튼 아래 간격 추가 */
+    background-color: #007bff; /* 버튼 배경 색상 설정 */
+    color: #fff; /* 버튼 텍스트 색상 설정 */
+    border: none; /* 버튼 테두리 제거 */
+    border-radius: 5px; /* 버튼 모서리 둥글게 처리 */
+    cursor: pointer; /* 클릭 가능 표시 */
+    box-shadow: 1px 1px 1px 1px #007bff;
+    font-size: 32px; /* 버튼 텍스트 크기 설정 */
 }
-.a_box a{
-    text-decoration: none; 
-    color: inherit;
+
+.a_box {
+    margin-top: 10px; /* 링크 상단 간격 추가 */
 }
-.a_box_1{
-    margin-right: 30px;
+
+.a_box a {
+    color: rgb; /* 링크 색상 설정 */
+    text-decoration: none; /* 밑줄 제거 */
+    margin: 0 10px; /* 링크 간 간격 설정 */
+    font-size: 14px; /* 링크 폰트 크기 설정 */
 }
-.a_box_2{
-    margin-left: 30px;
+
+.a_box a:hover {
+    text-decoration: underline; /* 마우스 오버 시 밑줄 표시 */
+}
+
+/* 로고 이미지 스타일 */
+.login_h1_box img {
+    max-width: 100%; /* 이미지가 박스 너비를 초과하지 않도록 설정 */
+    height: auto; /* 이미지 높이를 자동으로 설정 */
 }

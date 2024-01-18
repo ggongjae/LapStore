@@ -1,38 +1,36 @@
 /* 기본 스타일 */
 .product-detailed-info {
-    width: 80%;
+    width: 100%;
     border-collapse: collapse;
     margin: 20px 0;
 }
 
 .product-detailed-info td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
+    border: 1.5px solid #b3b3b3;
+    padding: 10px;
+    color: rgb(66, 66, 66);
+    font-weight: 200;
+    text-align: center;
 }
 
 /* 헤더 스타일 */
 .product-detailed-info thead th {
     display: flex;
-    color: black;
-    font-weight: bold;
-    border: none;
+    color: rgb(66, 66, 66);
+    font-weight: 400;
+    font-size: 20px;
+    margin-top: 20px;
 }
 
 /* 라벨과 데이터 스타일 */
 .label {
-    background-color: #f9f9f9;
-    font-weight: bold;
-    width: 25%; /* 라벨과 데이터의 비율을 조정 */
+    background-color: #d9d9d9;
+    font-weight: medium;
+    font-size: 18px;
+    width: 10%; /* 라벨과 데이터의 비율을 조정 */
 }
 
 .data {
     background-color: #ffffff;
     width: 25%;
 }
-
-/* 행 스타일 */
-.product-detailed-info tr:nth-child(even){background-color: #f2f2f2;}
-
-/* 마우스 호버 효과 */
-.product-detailed-info tr:hover {background-color: #ddd;}
