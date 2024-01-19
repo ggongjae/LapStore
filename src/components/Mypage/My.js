@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './Mypage.css'
+import './My.css'
 
 function MyPage() {
     const [name, setName] = useState('')
