@@ -11,8 +11,8 @@ import FloatingBar from '../components/MainPage/FloatingBar'
 const Mainpage = () => {
     return (
         <div>
-            <Image />
             <Header />
+            <Image />
             <MainBody />
             <FloatingBar />
             <MainRecommend />

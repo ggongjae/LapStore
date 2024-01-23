@@ -9,6 +9,7 @@ const FloatingBar = () => {
     const handleScroll = () => {
         // 플로팅 바가 고정될 위치
         const stickyPosition = 800 // 예시 값, 실제 위치에 맞게 조정 필요
+
         // 스크롤 위치가 stickyPosition에 도달했는지 확인
         setIsSticky(window.scrollY >= stickyPosition)
     }
@@ -20,10 +21,15 @@ const FloatingBar = () => {
             window.removeEventListener('scroll', handleScroll)
         }
     }, [])
-
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+        })
+    }
     return (
         <div className={`floating-bar ${isSticky ? 'sticky' : ''}`}>
-            <div className="floating-item" onClick={useEffect}>
+            <div className="floating-item" onClick={scrollToTop}>
                 <img src="/맨 위로.png" alt="Top" />
             </div>
             <div className="floating-item">

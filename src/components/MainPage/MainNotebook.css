@@ -26,3 +26,20 @@
     margin-bottom: 30px;
     text-align: center;
 }
+
+.video-item a {
+    margin: auto;
+    font-size: 18px;
+
+    color: #000000;
+}
+.video-item-title {
+    display: flex;
+    flex-direction: row;
+}
+.video-item-title p {
+    margin: auto;
+    font-size: 12px;
+    font-weight: 300;
+    color: #5a5a5a;
+}

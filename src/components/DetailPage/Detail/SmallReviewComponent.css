@@ -1,0 +1,43 @@
+.small-review-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.small-review-item {
+    display: flex;
+    flex-direction: row;
+    padding: 5px; /* 패딩 */
+}
+.small-review-item img {
+    width: 80px;
+    height: 80px;
+}
+.small-review-text {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2; /* 표시할 줄의 수를 2로 제한 */
+    overflow: hidden;
+    text-overflow: ellipsis; /* 넘친 내용을 말줄임표로 표시 */
+    max-width: 180px; /* 최대 너비 설정, 필요에 따라 조정 가능 */
+    line-height: 1.2em; /* 줄 높이 설정 */
+    height: 2.4em; /* line-height의 두 배 값을 height로 설정하여 두 줄만 표시 */
+    font-size: 12px;
+    color: rgb(90, 90, 90);
+}
+
+.small-review-footer {
+    display: flex;
+    flex-direction: column;
+}
+
+.small-review-user,
+.small-review-date {
+    margin-right: 10px;
+    font-size: 12px;
+    color: rgb(179, 179, 179);
+}
+
+.star-ratings .star-rating__star {
+}
+.small-review-user {
+}

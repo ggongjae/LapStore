@@ -132,14 +132,17 @@ const MainNotebook = () => {
                                 >
                                     {truncateTitle(video.snippet.title, 60)}
                                 </a>
-                                <p>{video.snippet.channelTitle}</p>
-                                <p>{video.formattedPublishedAt}</p>
-                                <p>
-                                    조회수:{' '}
-                                    {formatViewCount(
-                                        video.statistics.viewCount
-                                    )}
-                                </p>
+                                <div className="video-item-title">
+                                    <p>{video.snippet.channelTitle}</p>
+
+                                    <p>{video.formattedPublishedAt}</p>
+                                    <p>
+                                        조회수:{' '}
+                                        {formatViewCount(
+                                            video.statistics.viewCount
+                                        )}
+                                    </p>
+                                </div>
                             </div>
                         ))}
                     </div>

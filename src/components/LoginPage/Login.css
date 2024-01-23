@@ -4,7 +4,6 @@
     display: flex; /* Flexbox 레이아웃 사용 */
     justify-content: center; /* 가로축 중앙 정렬 */
     align-items: center; /* 세로축 중앙 정렬 */
-    background-color: #e5e5e5; /* 배경 색상 */
 }
 
 /* 실제 로그인 폼을 담는 내부 박스 */

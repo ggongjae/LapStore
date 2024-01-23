@@ -17,7 +17,7 @@ const DetailedProductReview = () => {
         {
             userId: 'user1',
             date: '2023-01-01',
-            text: '좋아요!',
+            text: 'ASUS ROG  Strix G18은 매력적인 게이밍 노트북입니다. 이 제품은 ASUS의 유명한 Republic of Gamer(RoG) 라인업에 속하며, 게이머들의 요구에 부응 하기 위해 고성능과 스타일을 결합한 디자인을 자랑합니다. 첫 인상부터 ASUS ROG Strix G18은 강력한 게임 성능을 위해 최신 기술을 탑재하고 있습니.!',
             rating: 5,
             image: 'https://via.placeholder.com/150',
         },
@@ -149,10 +149,12 @@ const DetailedProductReview = () => {
     const ratingCounts = Array(5).fill(0)
     reviews.forEach(review => ratingCounts[review.rating - 1]++)
 
-    const graphData = ratingCounts.map((count, index) => ({
-        name: `${index + 1}점`,
-        count,
-    }))
+    const graphData = ratingCounts
+        .map((count, index) => ({
+            name: `${1 + index}점`, // 5점부터 시작하도록 변경
+            count: count,
+        }))
+        .reverse() // 배열을 역순으로 정렬합니다.
     const totalReviews = reviews.length
 
     const ratingPercentages = ratingCounts.map(count =>
@@ -164,7 +166,7 @@ const DetailedProductReview = () => {
     const [showAllPhotos, setShowAllPhotos] = useState(false)
 
     // 최대 표시 가능한 포토 리뷰 수
-    const maxPhotoDisplay = 10
+    const maxPhotoDisplay = 8
 
     // 포토 리뷰를 최대 개수까지만 표시하기 위한 상태
     const displayPhotoReviews = showAllPhotos
@@ -259,20 +261,22 @@ const DetailedProductReview = () => {
                         <p className="rating-text">사용자 별점</p>
                         <div className="rating-value">
                             <p className="rating-value1">
-                                {averageRating.toFixed(1)}{' '}
-                            </p>{' '}
+                                {averageRating.toFixed(1)}
+                            </p>
                             <p className="rating-value2">/ 5</p>
                         </div>
-                        <StarRatings
-                            rating={averageRating}
-                            numberOfStars={5}
-                            starRatedColor="yellow"
-                            starDimension="40px"
-                            name="rating"
-                        />
+                        <div className="rating-star">
+                            <StarRatings
+                                rating={averageRating}
+                                numberOfStars={5}
+                                starRatedColor="yellow"
+                                starDimension="35px"
+                                name="rating"
+                            />
+                        </div>
                     </div>
                     <div className="chart-section">
-                        <ResponsiveContainer width={600} height={100}>
+                        <ResponsiveContainer width={264} height={125}>
                             <BarChart data={graphData}>
                                 <XAxis dataKey="name" />
                                 <YAxis allowDecimals={false} />
@@ -283,6 +287,7 @@ const DetailedProductReview = () => {
                 </div>
             </div>
             <div className="photo-reviews">
+                <p>포토리뷰 ({photoReviews.length})</p>
                 <div className="photo-container">
                     {displayPhotoReviews.map((review, index) => (
                         <img
@@ -324,22 +329,33 @@ const DetailedProductReview = () => {
             <div className="reviews-list">
                 {currentFilteredReviews.map((review, index) => (
                     <div key={index} className="review-item">
-                        <StarRatings
-                            rating={review.rating}
-                            numberOfStars={5}
-                            starRatedColor="yellow"
-                            starDimension="20px"
-                            name="rating"
-                        />
-                        <p>
-                            {review.userId}, {review.date}
-                        </p>
-                        <p>{review.text}</p>
-                        {review.image && (
-                            <img src={review.image} alt="review" />
-                        )}
+                        <div className="review-rating">
+                            <StarRatings
+                                rating={review.rating}
+                                numberOfStars={5}
+                                starRatedColor="yellow"
+                                starDimension="20px"
+                                name={`rating-${index}`}
+                            />
+                            <span className="review-star">{review.rating}</span>
+                            <span className="review-user">{review.userId}</span>
+                            <span className="review-date">{review.date}</span>
+                        </div>
+                        <div className="review-content">
+                            <p></p>
+                            <p className="review-text">{review.text}</p>
+                            {review.image && (
+                                <div className="review-image-container">
+                                    <img
+                                        src={review.image}
+                                        alt={`Review ${index}`}
+                                    />
+                                </div>
+                            )}
+                        </div>
                     </div>
                 ))}
+
                 <div className="page-navigation">
                     {currentPage > 1 && (
                         <>

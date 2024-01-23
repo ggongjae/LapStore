@@ -1,0 +1,179 @@
+.review-container {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+.review-heading {
+    width: 100%;
+    text-align: left;
+    padding: 20px; /* 좌측 정렬을 위한 패딩 */
+}
+
+.rating-chart {
+    display: flex;
+    justify-content: center;
+}
+
+.average-rating-section {
+    display: flex;
+    flex-direction: column; /* 별점을 위아래로 정렬합니다. */
+}
+.rating-text {
+}
+
+.rating-value {
+    display: flex;
+    align-items: center;
+}
+.rating-value1 {
+    font-size: 40px;
+    font-size: 40px; /* 숫자 폰트 사이즈 조정 */
+    margin: 10px;
+}
+.rating-value2 {
+    font-size: 28px;
+    color: rgb(125, 125, 125);
+}
+.chart-section {
+}
+
+.rating-star {
+}
+.photo-reviews {
+}
+.photo-container {
+    display: flex; /* 이미지를 가로로 나열합니다 */
+    align-items: center; /* 이미지를 세로 중앙에 정렬합니다 */
+}
+
+.photo-reviews img {
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+.extra-photos-indicator {
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    background-color: #444; /* 인디케이터 배경 색상 */
+    color: white; /* 인디케이터 글자 색상 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.review-content {
+    display: flex;
+    justify-content: space-between;
+}
+.reviews-list {
+    margin-top: 20px;
+}
+
+.review-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+.review-star {
+    margin-left: 10px;
+}
+.review-user {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+.review-item img {
+    max-width: 100%;
+}
+
+.review-item {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.review-rating {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    color: rgb(179, 179, 179);
+    margin-bottom: 10px; /* 별점과 리뷰 내용 사이 간격을 설정합니다 */
+}
+
+.review-star {
+    font-weight: bold;
+    font-size: 16px;
+    margin-left: 8px; /* 별점 오른쪽의 간격을 설정합니다 */
+}
+
+.review-user,
+.review-date {
+    margin-left: 10px; /* 사용자 이름과 날짜 사이의 간격을 설정합니다 */
+}
+
+.review-content {
+    display: flex;
+    justify-content: space-between;
+
+    text-overflow: ellipsis;
+}
+
+.review-text {
+    flex-grow: 1; /* 리뷰 텍스트가 가능한 공간을 모두 차지하도록 설정합니다 */
+    color: #444;
+    font-size: 12px;
+}
+
+.review-image-container {
+    flex-shrink: 0; /* 이미지 컨테이너가 축소되지 않도록 설정합니다 */
+    width: 100px; /* 이미지 컨테이너의 너비를 설정합니다 */
+    height: 100px; /* 이미지 컨테이너의 높이를 설정합니다 */
+}
+
+.review-image-container img {
+    max-width: 100%; /* 이미지가 컨테이너를 넘지 않도록 최대 너비를 설정합니다 */
+    max-height: 100%; /* 이미지가 컨테이너를 넘지 않도록 최대 높이를 설정합니다 */
+}
+
+.page-navigation {
+    text-align: center;
+    margin: 50px;
+}
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: -20px;
+}
+
+.filter-button {
+    width: 100%;
+    height: 40px;
+    border: 1px solid #ccc;
+    background-color: rgb(217, 217, 217);
+    cursor: pointer;
+}
+
+.filter-button:hover {
+    background-color: #ececec;
+}
+
+.filter-button.active {
+    background-color: rgb(217, 217, 217);
+    font-weight: bold;
+}
+
+.page-navigation button {
+    margin: 0 5px; /* 버튼 사이의 간격 */
+    padding: 5px 10px; /* 버튼 내부 패딩 */
+    border: none;
+    background-color: white; /* 배경색 */
+    color: rgb(125, 125, 125);
+    cursor: pointer; /* 마우스 오버 시 커서 변경 */
+}
+.page-navigation .active {
+    font-weight: 900;
+}

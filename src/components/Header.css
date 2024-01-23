@@ -70,8 +70,7 @@
 
 .icon-container-right {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 70%;
     left: 90%;
     background: none;
     border: none;
@@ -81,8 +80,7 @@
 
 .icon-container-left {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 70%;
     right: 90%;
     background: none;
     border: none;

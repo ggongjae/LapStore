@@ -1,11 +1,55 @@
-.price-input-container {
-    display: flex;
-    align-items: center;
+/* DetailPriceComparison.css */
+.product-comparison-container {
 }
 
-.price-input-container input {
-    padding: 5px;
-    width: 100px; /* 입력창의 고정 너비 설정 */
-    border: 1px solid #ccc; /* 입력창에 테두리 추가 */
-    border-radius: 5px; /* 입력창의 모서리를 둥글게 처리 */
+.product-comparison-grid {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fill,
+        minmax(400px, 1fr)
+    ); /* 반응형 그리드 생성 */
+}
+
+.product-comparison-item {
+    display: flex;
+    border: 1px solid #b3b3b3; /* 상품의 테두리 색상 */
+    align-items: center;
+}
+.product-comparison-item img {
+    width: 120px;
+    height: 120px;
+    background-color: rgb(217, 217, 217);
+}
+.product-comparison-price {
+    color: rgb(23, 76, 255);
+}
+.product-comparison-free {
+    font-size: 12px;
+    color: rgb(125, 125, 125);
+}
+.product-comparison-low {
+    font-size: 12px;
+    border: 1px solid #b3b3b3;
+    border-radius: 5px;
+    color: rgb(125, 125, 125);
+    margin-left: 10px;
+}
+.price-container span {
+    color: rgb(125, 125, 125);
+}
+.product-comparison-button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.product-comparison-button {
+    cursor: pointer;
+    font-size: 18px;
+    color: rgb(125, 125, 125);
+    margin: auto;
+    margin-bottom: 100px;
 }

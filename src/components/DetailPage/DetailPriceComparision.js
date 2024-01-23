@@ -1,10 +1,9 @@
 import React, { useState } from 'react'
 import './DetailPriceComparison.css'
+
 const PriceComparison = () => {
-    const [minPrice, setMinPrice] = useState(0)
-    const [maxPrice, setMaxPrice] = useState(Infinity)
     const [visible, setVisible] = useState(12)
-    const [showAll, setShowAll] = useState(false) // 추가
+    const [showAll, setShowAll] = useState(false)
 
     const products = [
         {
@@ -153,69 +152,46 @@ const PriceComparison = () => {
         },
     ]
 
-    const convertToNumberPrice = priceString => {
-        return Number(priceString.replace(/[^0-9.-]+/g, ''))
-    }
-
-    let filteredAndSortedProducts = []
-    if (products) {
-        filteredAndSortedProducts = products
-            .filter(
-                product =>
-                    convertToNumberPrice(product.가격) >= minPrice &&
-                    convertToNumberPrice(product.가격) <= maxPrice
-            )
-            .sort(
-                (a, b) =>
-                    convertToNumberPrice(a.가격) - convertToNumberPrice(b.가격)
-            )
-    }
-
     const showMore = () => {
-        if (showAll) {
-            setVisible(12)
-            setShowAll(false)
-        } else {
-            setVisible(filteredAndSortedProducts.length)
-            setShowAll(true)
-        }
+        setShowAll(!showAll)
     }
+
+    // '더보기' 버튼 클릭 시 표시할 상품 수를 조절합니다.
+    const displayedProducts = showAll ? products : products.slice(0, visible)
 
     return (
         <div className="product-comparison-container">
-            <h2>가격비교</h2>
-            <div>
-                <div className="price-input-container">
-                    <label>최소 가격: </label>
-                    <input
-                        type="number"
-                        value={minPrice}
-                        onChange={e => setMinPrice(Number(e.target.value))}
-                    />
-                    <label>최대 가격: </label>
-                    <input
-                        type="number"
-                        placeholder="200"
-                        value={maxPrice}
-                        onChange={e => setMaxPrice(Number(e.target.value))}
-                    />
-                </div>
+            <h2 className="product-comparison-heading">가격비교</h2>
+            <div class="price-container">
+                <span class="checkmark">✔</span>
+                <span class="lowest-price">최저가격</span>
             </div>
-            <div className="product-comparison">
-                {filteredAndSortedProducts
-                    .slice(0, visible)
-                    .map((product, index) => (
-                        <div key={index} className="product-item">
-                            <img src={product.image} />
-                            <h2>{product.name}</h2>
-                            <p>{product.가격}</p>
-                            <p>{product.해쉬태그}</p>
-                        </div>
-                    ))}
+            <div className="product-comparison-grid">
+                {displayedProducts.map((product, index) => (
+                    <div key={index} className="product-comparison-item">
+                        <img
+                            className="product-comparison-image"
+                            src={product.image}
+                        />
+                        <h3 className="product-comparison-price">
+                            {product.가격}
+                        </h3>
+                        <p className="product-comparison-free">(무료배송)</p>
+                        <button className="product-comparison-low">
+                            최저가
+                        </button>
+                        <p></p>
+                    </div>
+                ))}
             </div>
-            <button onClick={showMore}>
-                {showAll ? '원상복귀' : '더보기'}
-            </button>
+            {products.length > visible && (
+                <button
+                    onClick={showMore}
+                    className="product-comparison-button"
+                >
+                    {showAll ? '적게 보기' : '더 보기 '}
+                </button>
+            )}
         </div>
     )
 }
