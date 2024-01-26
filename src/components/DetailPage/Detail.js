@@ -12,6 +12,7 @@ import DetailedProductComparision from './DetailProductComparision'
 import DetailedProductReview from './Review/DetailedProductReview'
 import { Link, Element } from 'react-scroll'
 import SmallReviewComponent from './Detail/SmallReviewComponent'
+import LowPriceGraph from './Detail/LowPriceGraph'
 
 const Detail = ({ fakeRecommendations }) => {
     const { productId } = useParams()
@@ -314,6 +315,7 @@ const Detail = ({ fakeRecommendations }) => {
                                     {averageRating.toFixed(1)}
                                 </span>
                                 <SmallReviewComponent reviews={topReviews} />
+                                <LowPriceGraph />
                             </div>
                         </div>
                     </div>

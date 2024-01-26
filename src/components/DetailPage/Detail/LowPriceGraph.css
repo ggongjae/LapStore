@@ -1,0 +1,19 @@
+.low-price-graph {
+    display: flex;
+    flex-direction: row;
+    width: 258px;
+}
+
+.low-price-graph .title {
+    /* 타이틀 스타일 */
+    font-size: 14px;
+    color: rgb(66, 66, 66);
+    align-items: center;
+}
+
+.low-price-graph .time-range-selector {
+    /* 시간 범위 선택 라디오 버튼 컨테이너 스타일 */
+    font-size: 12px;
+    color: rgb(66, 66, 66);
+    margin: auto;
+}
