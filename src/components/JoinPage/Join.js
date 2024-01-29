@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import React from 'react'
 import './Join.css'
+import Agree from './Agree'
+
 function Join() {
     const [user, setUser] = useState({
         id: '',
@@ -205,6 +207,7 @@ function Join() {
                         가입
                     </button>
                 </div>
+                <Agree />
             </div>
         </div>
     )

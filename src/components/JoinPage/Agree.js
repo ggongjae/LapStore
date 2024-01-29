@@ -1,104 +1,44 @@
 import { useState } from 'react'
 import React from 'react'
 import './Agree.css'
-function Agree() {
-    const [user, setUser] = useState({
-        id: '',
-        password: '',
-        name: '',
-        phone: '',
-        email: '',
-        verificationCode: '', // 인증번호
-        registrationDate: '',
-        isAdmin: false,
-    })
 
-    const handleChange = event => {
-        const { name, value } = event.target
-        setUser({
-            ...user,
-            [name]: value,
-        })
+function Agree() {
+    const [isChecked, setIsChecked] = useState(false)
+    const [isChecked1, setIsChecked1] = useState(false)
+
+    const toggleCheck = () => {
+        setIsChecked(!isChecked)
     }
 
-    const handleJoin = () => {}
+    const handleAllAgree = () => {
+        // 여기에 모든 동의 항목을 처리하는 로직을 추가하세요.
+        setIsChecked(true)
+    }
 
     return (
-        <div className="join-box">
-            <div className="join-title-box">
-                <h1 className="join-title">회원가입</h1>
+        <div className="agree-container">
+            <div className="agree-header">
+                <input
+                    type="checkbox"
+                    checked={isChecked}
+                    onChange={toggleCheck}
+                />
+                <p>모두 확인하였으며 동의합니다.</p>
             </div>
-            <div className="join-input-box">
-                <div>
-                    <p>아이디</p>
-                    <input
-                        className="id"
-                        type="email"
-                        name="id"
-                        value={user.id}
-                        onChange={handleChange}
-                        placeholder="아이디"
-                    />
-                </div>
-                <p>비밀번호</p>
-                <input
-                    className="password"
-                    type="password"
-                    name="password"
-                    value={user.password}
-                    onChange={handleChange}
-                    placeholder="비밀번호 입력"
-                />
-                <p>비밀번호 재확인</p>
-                <input
-                    className="password"
-                    type="password"
-                    name="confirmPassword"
-                    value={user.confirmPassword}
-                    onChange={handleChange}
-                    placeholder="비밀번호 재입력"
-                />
-                <p>이름</p>
-                <input
-                    className="name"
-                    type="name"
-                    name="name"
-                    value={user.name}
-                    onChange={handleChange}
-                    placeholder="이름"
-                />
-                <p>휴대폰 번호</p>
-                <input
-                    className="phone"
-                    type="text"
-                    name="phone"
-                    value={user.phone}
-                    onChange={handleChange}
-                    placeholder="휴대전화"
-                />
-                <p>인증번호</p>
-                <input
-                    className="verification-code"
-                    type="text"
-                    name="verificationCode"
-                    value={user.verificationCode}
-                    onChange={handleChange}
-                    placeholder="인증번호"
-                />
-                <p>E-mail</p>
-                <input
-                    className="email"
-                    type="text"
-                    name="email"
-                    value={user.email}
-                    onChange={handleChange}
-                    placeholder="이메일주소 입력"
-                />
+            <div className="agree-content">
+                <p>
+                    전체 동의에는 필수 및 선택 정보에 대한 동의가 포함되어
+                    있으며, 개별적으로 동의를 선택 하실 수 있습니다. 선택 항목에
+                    대한 동의를 거부하시는 경우에도 서비스 이용이 가능합니다.
+                </p>
             </div>
-            <div>
-                <button className="join-submit-btn" onClick={handleJoin}>
-                    가입
-                </button>
+            <div className="agree-checkbox">
+                <input
+                    type="checkbox"
+                    checked={isChecked1}
+                    onChange={toggleCheck}
+                />
+                <label onClick={toggleCheck}>만 14세 이상입니다</label>
             </div>
         </div>
     )
