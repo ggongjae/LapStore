@@ -1,8 +1,8 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import React from 'react'
 import './Agree.css'
 
-function Agree() {
+function Agree({ onAgreeChange }) {
     // 각 체크박스의 상태를 배열로 관리합니다.
     const [checks, setChecks] = useState({
         allCheck: false,
@@ -34,6 +34,9 @@ function Agree() {
             advertisementCheck: !isAllChecked,
         })
     }
+    useEffect(() => {
+        onAgreeChange(checks)
+    }, [checks, onAgreeChange])
 
     return (
         <div className="agree-container">

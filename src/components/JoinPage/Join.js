@@ -29,10 +29,16 @@ function Join() {
     const isValidPassword = password => {
         return password.length >= 6 // 예시로, 최소 6자 이상이어야 함
     }
+    // ID 중복 검사와 비밀번호 확인을 위한 상태를 추가합니다.
+    const [idDuplicated, setIdDuplicated] = useState(false)
+    const [passwordMismatch, setPasswordMismatch] = useState(false)
+
+    const [agree, setAgree] = useState(false) // 초기값을 false로 설정합니다.
 
     // 상태 추가
     const [isIdValid, setIsIdValid] = useState(true)
     const [isVerificationCodeSent, setIsVerificationCodeSent] = useState(false)
+
     const [isVerified, setIsVerified] = useState(false)
     // ID 중복 검사 함수
     const handleCheckId = async () => {
@@ -59,29 +65,57 @@ function Join() {
     }
 
     const handleJoin = () => {
-        // 모든 필드에 대한 유효성 검사
+        if (
+            !user.id ||
+            !user.password ||
+            !user.name ||
+            !user.phone ||
+            !user.email
+        ) {
+            alert('모든 필드를 채워주세요.')
+            return
+        }
+
+        // 이메일 형식 유효성 검사
         if (!isValidEmail(user.email)) {
             alert('유효하지 않은 이메일 주소입니다.')
             return
         }
+
+        // 전화번호 형식 유효성 검사
         if (!isValidPhoneNumber(user.phone)) {
             alert('유효하지 않은 전화번호입니다.')
             return
         }
+
+        // 비밀번호 형식 유효성 검사
         if (!isValidPassword(user.password)) {
             alert('비밀번호는 최소 6자 이상이어야 합니다.')
             return
         }
+
+        // 비밀번호 일치 여부 확인
         if (user.password !== user.confirmPassword) {
             alert('비밀번호가 일치하지 않습니다.')
             return
         }
+        // 모든 약관에 동의했는지 확인
+        if (!agree) {
+            alert('모든 약관에 동의해야 회원가입이 가능합니다.')
+            return
+        }
 
-        // 서버로 데이터 전송 로직 구현
-        // 예: axios.post('/api/register', user)
+        // 이 모든 검사를 통과했다면 서버로 데이터 전송 로직 구현
         console.log('회원가입 정보:', user)
         alert('회원가입이 완료되었습니다.')
     }
+    // Agree 컴포넌트로부터의 상태를 업데이트하는 콜백 함수입니다.
+    const handleAgreeChange = newChecks => {
+        // 모든 동의 항목이 체크되었는지 검사합니다.
+        const allAgreed = Object.values(newChecks).every(check => check)
+        setAgree(allAgreed) // 상태를 업데이트합니다.
+    }
+
     return (
         <div className="join-box">
             <div className="join-title-box">
@@ -91,6 +125,11 @@ function Join() {
                 <div>
                     <label htmlFor="id">아이디</label>
                     <span>*</span>
+                    {idDuplicated && (
+                        <span className="id-duplicated-warning">
+                            아이디 중복
+                        </span>
+                    )}
                 </div>
                 <div>
                     <input
@@ -114,6 +153,7 @@ function Join() {
                     <label htmlFor="password">비밀번호</label>
                     <span>*</span>
                 </div>
+
                 <input
                     id="password"
                     className="join-input"
@@ -123,6 +163,7 @@ function Join() {
                     onChange={handleChange}
                     placeholder="비밀번호 입력"
                 />
+
                 <div>
                     <label htmlFor="confirmPassword">비밀번호 재확인</label>
                     <span>*</span>
@@ -136,6 +177,11 @@ function Join() {
                     onChange={handleChange}
                     placeholder="비밀번호 재입력"
                 />
+                {passwordMismatch && (
+                    <span className="password-mismatch-warning">
+                        비밀번호가 일치하지 않습니다
+                    </span>
+                )}
                 <div>
                     <label htmlFor="name">이름</label>
                     <span>*</span>
@@ -203,7 +249,8 @@ function Join() {
                     placeholder="이메일주소 입력"
                 />
 
-                <Agree />
+                <Agree onAgreeChange={handleAgreeChange} />
+
                 <div className="join-submit-box">
                     <button className="join-submit-btn" onClick={handleJoin}>
                         동의하고 가입하기

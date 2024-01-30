@@ -1,27 +1,44 @@
 import './Header.css'
 import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {
-    faSearch,
-    faChevronRight,
-    faChevronLeft,
-} from '@fortawesome/free-solid-svg-icons'
-
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom'
+
 const Header = () => {
+    const [searchTerm, setSearchTerm] = useState('')
+
+    const onSearchChange = event => {
+        setSearchTerm(event.target.value)
+    }
+
+    const onSearchSubmit = event => {
+        event.preventDefault()
+        console.log('검색어:', searchTerm)
+        // TODO: 검색 결과 페이지로 리다이렉트하거나 검색 결과를 표시하는 로직을 추가
+    }
+
     return (
         <div className="main-header">
             <Link to="/">
-                <img src="/로고.png" className="main-header_logo"></img>
+                <img src="/로고.png" alt="로고" className="main-header_logo" />
             </Link>
             <div className="main-header_search">
-                <div className="search-box">
-                    <input type="text" className="search-input" />
+                <form className="search-box" onSubmit={onSearchSubmit}>
+                    <input
+                        type="text"
+                        className="search-input"
+                        onChange={onSearchChange}
+                        value={searchTerm}
+                    />
                     <div className="search-line"></div>
-                    <button className="search-button" style={{ color: 'gray' }}>
+                    <button
+                        type="submit"
+                        className="search-button"
+                        style={{ color: 'gray' }}
+                    >
                         <FontAwesomeIcon icon={faSearch} />
                     </button>
-                </div>
+                </form>
             </div>
 
             <div className="main-header_user">

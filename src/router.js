@@ -7,7 +7,7 @@ import Login from './pages/Loginpage'
 import Join from './pages/Joinpage'
 import MyPage from './pages/Mypage'
 
-function Routing() {
+function router() {
     return (
         <Router>
             <Routes>
@@ -22,4 +22,4 @@ function Routing() {
     )
 }
 
-export default Routing
+export default router

@@ -1,60 +1,61 @@
 /* 전체 페이지를 채우는 컨테이너 */
 .my-page-container {
-    margin-top: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: #f5f5f5; /* 배경색 */
 }
-
-/* 마이 페이지 제목 */
-.my-page-title {
-    margin-top: 50px;
-    font-size: 50px;
-    color: #007bff;
+.my-page-container {
+    color: #333;
 }
 
-/* 프로필 섹션 스타일링 */
 .profile-section {
-    margin: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    text-align: center;
 }
 
-/* 프로필 이미지 스타일 */
 .profile-image {
-    width: 150px; /* 적절한 크기 조정 */
-    height: 150px; /* 적절한 크기 조정 */
-    border-radius: 50%; /* 원형 이미지 */
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+}
+
+.profile-placeholder {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    line-height: 80px;
+    text-align: center;
+    color: #999;
+    font-size: 40px;
+}
+
+.info-section p,
+.input-box p {
+    margin: 0;
+    font-weight: 700;
+    font-size: 12px;
+    color: #333;
+}
+
+.input-box {
+    margin-bottom: 20px;
+}
+
+.input-box div {
     margin-bottom: 10px;
 }
 
-/* 정보 섹션 스타일링 */
-.info-section {
-    margin-bottom: 2rem;
-}
-
-/* 입력 필드를 감싸는 박스 */
-.input-box {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 1rem;
-}
-
-/* 입력 필드 */
-.input-box input {
-    width: 360px;
-    height: 48px;
+.name-input,
+.email-input,
+.phone-input,
+.id-input,
+.password-input {
+    width: 100%;
+    padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    margin: 10px 0;
-}
-
-/* 반응형 디자인: 태블릿 크기에 맞춤 */
-@media (max-width: 768px) {
-    .input-box input,
-    button {
-        width: 90%; /* 입력 필드와 버튼의 너비를 조정 */
-    }
+    margin-top: 5px;
 }
