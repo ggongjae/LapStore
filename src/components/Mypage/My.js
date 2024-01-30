@@ -5,22 +5,48 @@ function MyPage() {
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [phone, setPhone] = useState('')
+    const [profileImage, setProfileImage] = useState(null)
 
     const onNameChange = event => {
-        setName(event.currentTarget.value)
+        setName(event.target.value)
     }
 
     const onEmailChange = event => {
-        setEmail(event.currentTarget.value)
+        setEmail(event.target.value)
     }
 
     const onPhoneChange = event => {
-        setPhone(event.currentTarget.value)
+        setPhone(event.target.value)
+    }
+
+    const onImageChange = event => {
+        const file = event.target.files[0]
+        const reader = new FileReader()
+        reader.onloadend = () => {
+            setProfileImage(reader.result)
+        }
+        reader.readAsDataURL(file)
+    }
+
+    const onUpdate = () => {
+        // 서버로 정보를 전송하는 로직을 여기에 추가하거나, 예시로 콘솔에 출력
+        console.log('업데이트 정보:', { name, email, phone })
+        alert('업데이트되었습니다!')
     }
 
     return (
         <div className="my-page-container">
             <h1 className="my-page-title">마이 페이지</h1>
+            <div className="profile-section">
+                {profileImage && (
+                    <img
+                        src={profileImage}
+                        alt="프로필 사진"
+                        className="profile-image"
+                    />
+                )}
+                <input type="file" accept="image/*" onChange={onImageChange} />
+            </div>
             <div className="info-section">
                 <p>이름: {name}</p>
                 <p>이메일: {email}</p>
@@ -50,8 +76,6 @@ function MyPage() {
                     placeholder="전화번호"
                 />
             </div>
-            {/* Update button */}
-            <button onClick={() => alert('업데이트')}>업데이트</button>
         </div>
     )
 }
