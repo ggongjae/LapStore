@@ -5,6 +5,7 @@ import './Agree.css'
 function Agree() {
     // 각 체크박스의 상태를 배열로 관리합니다.
     const [checks, setChecks] = useState({
+        allCheck: false,
         ageCheck: false,
         termsCheck: false,
         privacyCheck: false,
@@ -18,31 +19,40 @@ function Agree() {
         setChecks({ ...checks, [name]: !checks[name] })
     }
 
-    // 전체 동의 버튼을 클릭했을 때 모든 체크박스를 선택하는 함수입니다.
     const handleAllAgree = () => {
+        // 현재 모든 체크박스가 체크되어 있는지 확인
+        const isAllChecked = Object.values(checks).every(checked => checked)
+
+        // 만약 모든 체크박스가 체크되어 있다면 모두 해제, 그렇지 않으면 모두 체크
         setChecks({
-            ageCheck: true,
-            termsCheck: true,
-            privacyCheck: true,
-            marketingCheck: true,
-            thirdPartyCheck: true,
-            advertisementCheck: true,
+            allCheck: !isAllChecked,
+            ageCheck: !isAllChecked,
+            termsCheck: !isAllChecked,
+            privacyCheck: !isAllChecked,
+            marketingCheck: !isAllChecked,
+            thirdPartyCheck: !isAllChecked,
+            advertisementCheck: !isAllChecked,
         })
     }
 
     return (
         <div className="agree-container">
             <div className="agree-header">
-                <button onClick={handleAllAgree}>전체 동의</button>
-                <p>모두 확인하였으며 동의합니다.</p>
+                <label>
+                    <input
+                        type="checkbox"
+                        checked={checks.allCheck}
+                        onChange={() => handleAllAgree()}
+                    />
+                    모두 확인하였으며 동의합니다.
+                </label>
             </div>
             <div className="agree-content">
                 <p>
                     전체 동의에는 필수 및 선택 정보에 대한 동의가 포함되어
-                    있으며,
-                    <br />
-                    개별적으로 동의를 선택하실 수 있습니다. 선택 항목에 대한
-                    동의를 거부하시는 경우에도
+                    있으며,개별적으로 <br />
+                    동의를 선택하실 수 있습니다. 선택 항목에 대한 동의를
+                    거부하시는 경우에도
                     <br />
                     서비스 이용이 가능합니다.
                 </p>
@@ -92,7 +102,7 @@ function Agree() {
                 <label>
                     <input
                         type="checkbox"
-                        checked={checks.advertisementCheckCheck}
+                        checked={checks.advertisementCheck}
                         onChange={() => handleCheck('advertisenentCheck')}
                     />
                     [선택] 광고성 정보 수신 동의

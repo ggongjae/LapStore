@@ -202,12 +202,13 @@ function Join() {
                     onChange={handleChange}
                     placeholder="이메일주소 입력"
                 />
+
+                <Agree />
                 <div className="join-submit-box">
                     <button className="join-submit-btn" onClick={handleJoin}>
-                        가입
+                        동의하고 가입하기
                     </button>
                 </div>
-                <Agree />
             </div>
         </div>
     )
