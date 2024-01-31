@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Detail from './pages/Detailpage'
 import Main from './pages/Mainpage'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
