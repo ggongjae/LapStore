@@ -29,32 +29,8 @@ function My() {
         setPhone(event.target.value)
     }
 
-    const onImageChange = event => {
-        if (event.target.files && event.target.files[0]) {
-            const file = event.target.files[0]
-            const reader = new FileReader()
-            reader.onloadend = () => {
-                setProfileImage(reader.result)
-            }
-            reader.readAsDataURL(file)
-        }
-    }
-
     return (
         <div className="my-page-container">
-            <div className="profile-section">
-                {profileImage ? (
-                    <img
-                        src={profileImage}
-                        alt="프로필 사진"
-                        className="profile-image"
-                    />
-                ) : (
-                    <div className="profile-placeholder"></div>
-                )}
-                <input type="file" onChange={onImageChange} />
-            </div>
-
             <div className="info-section">
                 <h2>회원정보</h2>
                 <div>

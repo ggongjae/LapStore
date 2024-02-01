@@ -195,49 +195,7 @@ function Join() {
                     onChange={handleChange}
                     placeholder="이름"
                 />
-                <div>
-                    <label htmlFor="phone">휴대폰 번호</label>
-                    <span>*</span>
-                </div>
-                <div>
-                    <input
-                        id="phone"
-                        className="join-input"
-                        type="text"
-                        name="phone"
-                        value={user.phone}
-                        onChange={handleChange}
-                        placeholder="휴대전화"
-                    />
-                    <button
-                        className="send-code-btn"
-                        onClick={handleSendVerificationCode}
-                    >
-                        인증번호
-                    </button>
-                </div>
-                <div>
-                    <label htmlFor="verificationCode">인증번호</label>
-                    <span>*</span>
-                </div>
-                <div>
-                    <input
-                        id="verificationCode"
-                        className="join-input"
-                        type="text"
-                        name="verificationCode"
-                        value={user.verificationCode}
-                        onChange={handleChange}
-                        placeholder="인증번호"
-                    />
-                    <button
-                        className="verify-code-btn"
-                        onClick={handleVerifyCode}
-                        disabled={isVerified}
-                    >
-                        확인
-                    </button>
-                </div>
+
                 <label htmlFor="email">E-mail</label>
                 <input
                     id="email"
