@@ -8,9 +8,7 @@ function Join() {
         id: '',
         password: '',
         name: '',
-        phone: '',
         email: '',
-        verificationCode: '', // 인증번호
         registrationDate: '',
         isAdmin: false,
     })
@@ -37,26 +35,12 @@ function Join() {
 
     // 상태 추가
     const [isIdValid, setIsIdValid] = useState(true)
-    const [isVerificationCodeSent, setIsVerificationCodeSent] = useState(false)
 
-    const [isVerified, setIsVerified] = useState(false)
     // ID 중복 검사 함수
     const handleCheckId = async () => {
         // ID 중복 검사 로직 구현...
         // 결과에 따라 isIdValid 상태 업데이트
         setIsIdValid(false) // 예시로, 중복되지 않음을 나타냄
-    }
-
-    // 인증번호 발송 함수
-    const handleSendVerificationCode = async () => {
-        // 인증번호 발송 로직 구현...
-        setIsVerificationCodeSent(true) // 인증번호 발송 상태 업데이트
-    }
-
-    // 인증번호 확인 함수
-    const handleVerifyCode = async () => {
-        // 인증번호 확인 로직 구현...
-        setIsVerified(true) // 예시로, 인증되었음을 나타냄
     }
 
     const handleChange = event => {
@@ -65,13 +49,7 @@ function Join() {
     }
 
     const handleJoin = () => {
-        if (
-            !user.id ||
-            !user.password ||
-            !user.name ||
-            !user.phone ||
-            !user.email
-        ) {
+        if (!user.id || !user.password || !user.name || !user.email) {
             alert('모든 필드를 채워주세요.')
             return
         }
@@ -79,12 +57,6 @@ function Join() {
         // 이메일 형식 유효성 검사
         if (!isValidEmail(user.email)) {
             alert('유효하지 않은 이메일 주소입니다.')
-            return
-        }
-
-        // 전화번호 형식 유효성 검사
-        if (!isValidPhoneNumber(user.phone)) {
-            alert('유효하지 않은 전화번호입니다.')
             return
         }
 

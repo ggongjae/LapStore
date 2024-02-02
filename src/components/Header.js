@@ -19,9 +19,15 @@ const Header = () => {
 
     return (
         <div className="main-header">
-            <Link to="/">
-                <img src="/로고.png" alt="로고" className="main-header_logo" />
-            </Link>
+            <div>
+                <Link to="/">
+                    <img
+                        src="/로고.png"
+                        alt="로고"
+                        className="main-header_logo"
+                    />
+                </Link>
+            </div>
             <div className="main-header_search">
                 <form className="search-box" onSubmit={onSearchSubmit}>
                     <input
